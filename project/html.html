@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA-1 | Quantara Jet Racing</title>
+    <meta name="description" content="Premium Identity for Nova-1 Jet Racing Team">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Dynamic Background Elements -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="glass-nav">
+        <div class="logo">
+            <span class="logo-text">NOVA<span class="highlight">-1</span></span>
+            <div class="logo-badge">QUANTARA</div>
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#aircraft" class="active">The Aircraft</a>
+            <a href="#features">Tech Specs</a>
+            <a href="#team">Team</a>
+        </nav>
+        <div class="nav-actions">
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-btn" id="mobileMenuBtn"><i class="ri-menu-line"></i></div>
+            <button class="btn-primary" onclick="openModal('preOrderModal')">Pre-order Jet</button>
+        </div>
+    </header>
+
+    <main class="hero section" id="aircraft">
+        <div class="hero-content">
+            <div class="badge">Next Generation</div>
+            <h1 class="hero-title">
+                DEFY<br>
+                <span class="gradient-text">GRAVITY.</span>
+            </h1>
+            <p class="hero-desc">
+                Meet the Quantara X-1. The most advanced supersonic racing jet built for the Nova-1 league. Experience unmatched aerodynamics, zero-gravity maneuvering, and pure speed in a pristine, flawless design.
+            </p>
+            <div class="action-group">
+                <button class="btn-primary glow" onclick="smoothScroll('#features')">Explore Model X-1 <i class="ri-arrow-down-line"></i></button>
+                <div class="play-btn" onclick="openModal('videoModal')">
+                    <div class="play-icon"><i class="ri-play-fill"></i></div>
+                    <span>Watch Teaser</span>
+                </div>
+            </div>
+
+            <div class="metrics-row">
+                <div class="metric">
+                    <div class="metric-val" id="mspeed">Mach 3.5</div>
+                    <div class="metric-label">Max Speed</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-val" id="mthrust">12,000</div>
+                    <div class="metric-label">Thrust (lbf)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-val" id="maccel">2.1s</div>
+                    <div class="metric-label">0-600 mph</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="jet-container" id="jet-container">
+                <div class="jet-placeholder">
+                    <div class="jet-wing wing-left"></div>
+                    <div class="jet-body">
+                        <div class="cockpit"></div>
+                        <div class="engine"></div>
+                    </div>
+                    <div class="jet-wing wing-right"></div>
+                </div>
+            </div>
+
+            <div class="glass-widget widget-1 parallax" data-speed="0.05">
+                <div class="widget-header">
+                    <i class="ri-dashboard-3-line"></i>
+                    <span>Telemetry</span>
+                </div>
+                <div class="widget-body">
+                    <div class="chart-bars" id="telemetryBars">
+                        <div class="bar" style="height: 40%"></div>
+                        <div class="bar" style="height: 70%"></div>
+                        <div class="bar" style="height: 100%"></div>
+                        <div class="bar" style="height: 60%"></div>
+                        <div class="bar" style="height: 85%"></div>
+                    </div>
+                    <div class="widget-stat">
+                        <span class="stat-num" id="engineEff">98.4%</span>
+                        <span class="stat-text">Engine Efficiency</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-widget widget-2 parallax" data-speed="-0.03">
+                <div class="pilot-profile">
+                    <div class="pilot-avatar"></div>
+                    <div class="pilot-info">
+                        <div class="pilot-name">Elena Rostova</div>
+                        <div class="pilot-rank">Lead Pilot</div>
+                    </div>
+                </div>
+                <div class="pilot-stats">
+                    <div class="p-stat"><strong>Rank:</strong> #1</div>
+                    <div class="p-stat"><strong>Wins:</strong> 24</div>
+                </div>
+            </div>
+
+            <div class="glass-widget widget-3 parallax" data-speed="0.04">
+                <div class="widget-header">
+                    <i class="ri-radar-line"></i>
+                    <span>Aerodynamics</span>
+                </div>
+                <div class="aero-ring">
+                    <div class="ring-core"></div>
+                    <div class="ring-pulse"></div>
+                </div>
+                <div class="widget-stat center">
+                    <span class="stat-num text-blue">Optimal</span>
+                    <span class="stat-text">Drag Coefficient</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header center">
+                <div class="badge">Uncompromised Power</div>
+                <h2 class="section-title">A Symphony of <br><span class="text-blue">Engineering</span></h2>
+                <p class="section-desc">Every element of the Quantara X-1 is meticulously crafted for peak performance in extreme environments.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon icon-red"><i class="ri-rocket-line"></i></div>
+                    <h3>Thrust Vectoring</h3>
+                    <p>Omnidirectional nozzles provide absolute control with 3D maneuvering capabilities that defy conventional physics.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon icon-blue"><i class="ri-shield-flash-line"></i></div>
+                    <h3>Quantum Shielding</h3>
+                    <p>Advanced ablative materials combined with an electromagnetic deflector array protect the cockpit from high-G stress and micro-debris.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon icon-purple"><i class="ri-cpu-line"></i></div>
+                    <h3>Neural Core Sync</h3>
+                    <p>Pilots are directly integrated into the jet's mainframe via a non-invasive neural interface, eliminating feedback lag.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="section showcase" id="specs">
+        <div class="container dual-panel">
+            <div class="showcase-text">
+                <h2 class="section-title">Designed for the <br>Winner's Podium.</h2>
+                <p class="section-desc">The chassis is built using a proprietary carbon-titanium weave, making it 40% lighter while increasing rigidity against multi-axis strain. This isn't just a jet; it's a statement.</p>
+                <ul class="check-list">
+                    <li><i class="ri-check-line"></i> Advanced Gyroscopic Stabilizers</li>
+                    <li><i class="ri-check-line"></i> Active Aero-Morphing Wings</li>
+                    <li><i class="ri-check-line"></i> Plasma-Infused Afterburners</li>
+                </ul>
+                <button class="btn-outline" onclick="showToast('Specs booklet downloading...')">Download Specs Booklet</button>
+            </div>
+            <div class="showcase-visual">
+                <div class="glass-orb-huge">
+                    <div class="inner-art">
+                        <i class="ri-plane-fill" style="font-size: 8rem; color: var(--accent-primary); transform: rotate(-45deg);"></i>
+                    </div>
+                </div>
+                <div class="floating-stat stat-left">
+                    <span class="stat-value">40%</span>
+                    <span class="stat-label">Lighter Chassis</span>
+                </div>
+                <div class="floating-stat stat-right text-blue">
+                    <span class="stat-value">0 Lag</span>
+                    <span class="stat-label">Neural Sync</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The <span class="gradient-text text-dark">Quantara</span> Squad</h2>
+                <p class="section-desc">Led by veterans of the orbital racing leagues, our pilots are forged in the fires of high-velocity competition.</p>
+            </div>
+            <div class="team-grid">
+                <div class="pilot-card" onclick="showToast('Pilot Profile: Elena Rostova viewed.')">
+                    <div class="pilot-img" style="background-image: url('https://i.pravatar.cc/300?img=47');"></div>
+                    <div class="pilot-card-info">
+                        <div class="p-role">Lead Pilot</div>
+                        <h3>Elena Rostova</h3>
+                        <p>24 Career Wins • 3 World Titles</p>
+                    </div>
+                </div>
+                <div class="pilot-card" onclick="showToast('Pilot Profile: Marcus Vance viewed.')">
+                    <div class="pilot-img" style="background-image: url('https://i.pravatar.cc/300?img=11');"></div>
+                    <div class="pilot-card-info">
+                        <div class="p-role">Tactical Navigator</div>
+                        <h3>Marcus Vance</h3>
+                        <p>18 Career Wins • Neural Expert</p>
+                    </div>
+                </div>
+                <div class="pilot-card" onclick="showToast('Pilot Profile: Sarah Lin viewed.')">
+                    <div class="pilot-img" style="background-image: url('https://i.pravatar.cc/300?img=32');"></div>
+                    <div class="pilot-card-info">
+                        <div class="p-role">Chief Engineer</div>
+                        <h3>Sarah Lin</h3>
+                        <p>Aerospace PhD • Ex-Military</p>
+                    </div>
+                </div>
+                <div class="pilot-card" onclick="openModal('recruitModal')">
+                    <div class="pilot-img bg-dark join-card">
+                        <i class="ri-add-line"></i>
+                    </div>
+                    <div class="pilot-card-info">
+                        <div class="p-role">Recruitment</div>
+                        <h3>Join the Team</h3>
+                        <p>Do you have what it takes?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-cta glass-card">
+            <h2>Ready to conquer the skies?</h2>
+            <p>Join the Quantara fan club to get exclusive behind-the-scenes access, merch drops, and VIP race passes.</p>
+            <form class="cta-form" onsubmit="event.preventDefault(); showToast('Subscribed to Newsletter Successfully!'); this.reset();">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn-primary glow">Subscribe</button>
+            </form>
+        </div>
+        <div class="container footer-links">
+            <div class="f-logo">
+                NOVA<span class="highlight">-1</span>
+            </div>
+            <div class="f-socials">
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Nova-1 League, Quantara Team. Premium Light Mode Design.</p>
+            <div class="legal-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pre-Order Modal -->
+    <div class="modal-overlay" id="preOrderModal" onclick="closeModal(event, 'preOrderModal')">
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModalDirect('preOrderModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3>Pre-order Quantara X-1</h3>
+                <p>Reserve your slot for the next generation of atmospheric racing jets.</p>
+            </div>
+            <form onsubmit="event.preventDefault(); submitPreOrder();">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Corporate Identity / Team</label>
+                    <input type="text" placeholder="Optional">
+                </div>
+                <div class="form-group">
+                    <label>Select Jet Configuration</label>
+                    <select required>
+                        <option value="">Choose...</option>
+                        <option value="racing">Track Configuration (Mach 3.5)</option>
+                        <option value="orbital">Orbital Configuration (Mach 4.2)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary btn-submit glow">Confirm Reservation Deposit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recruitment Modal -->
+    <div class="modal-overlay" id="recruitModal" onclick="closeModal(event, 'recruitModal')">
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModalDirect('recruitModal')"><i class="ri-close-line"></i></button>
+            <div class="modal-header">
+                <h3>Join the Quantara Team</h3>
+                <p>Looking for top-tier pilots and engineers. Apply within.</p>
+            </div>
+            <form onsubmit="event.preventDefault(); showToast('Application submitted! We will contact you soon.'); closeModalDirect('recruitModal'); this.reset();">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select required>
+                        <option value="pilot">Pilot</option>
+                        <option value="engineer">Engineer</option>
+                        <option value="data">Data Analyst</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary btn-submit glow">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="videoModal" onclick="closeModal(event, 'videoModal')">
+        <div class="modal-content glass-card" style="max-width: 800px; padding: 20px;">
+            <button class="modal-close" onclick="closeModalDirect('videoModal')" style="top: 10px; right: 10px; z-index:10;"><i class="ri-close-line"></i></button>
+            <div style="background: #000; border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; display: flex; align-items:center; justify-content:center; color:white;">
+                <div><i class="ri-play-circle-line" style="font-size: 4rem; color: var(--accent-primary);"></i><br>Teaser Simulator</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="ri-checkbox-circle-fill"></i>
+        <span id="toastMsg">Action successful</span>
+    </div>
+
+    <!-- Master Scripts -->
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('customCursor');
+        const follower = document.getElementById('cursorFollower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
+        });
+
+        // Add hover effect to all buttons and links
+        const interactiveEls = document.querySelectorAll('a, button, .play-btn, .pilot-card');
+        interactiveEls.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('cursor-hover');
+            });
+        });
+
+        // Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            const jet = document.getElementById('jet-container');
+            const x = (window.innerWidth / 2 - e.pageX);
+            const y = (window.innerHeight / 2 - e.pageY);
+
+            parallaxElements.forEach(el => {
+                const speed = el.getAttribute('data-speed');
+                el.style.transform = `translateX(${x * speed}px) translateY(${y * speed}px)`;
+            });
+
+            // subtle jet rotation
+            if(jet) {
+                jet.style.transform = `rotateX(${y * 0.02}deg) rotateY(${-x * 0.02}deg) translateZ(50px)`;
+            }
+        });
+
+        // Telemetry Live Simulation
+        const telemetryBars = document.getElementById('telemetryBars');
+        const engineEff = document.getElementById('engineEff');
+        
+        setInterval(() => {
+            if(!telemetryBars) return;
+            const bars = telemetryBars.querySelectorAll('.bar');
+            bars.forEach(bar => {
+                // Random height between 30% and 100%
+                const newHeight = Math.floor(Math.random() * 70) + 30;
+                bar.style.height = newHeight + '%';
+            });
+            // Update percentage string slightly
+            const currentEff = 97 + (Math.random() * 2);
+            engineEff.innerText = currentEff.toFixed(1) + '%';
+        }, 1500);
+
+        // Smooth Scroll implementation
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+            // highlight the nav link
+            updateNav(target);
+        }
+
+        // Intersect Observer for Nav Active States
+        const sections = document.querySelectorAll('.section');
+        const navLinksArr = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinksArr.forEach(link => {
+                        link.classList.remove('active');
+                        if(link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(sec => observer.observe(sec));
+
+        function updateNav(hash) {
+            navLinksArr.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navCont = document.getElementById('navLinks');
+        
+        menuBtn.addEventListener('click', () => {
+            navCont.classList.toggle('active');
+            if(navCont.classList.contains('active')) {
+                menuBtn.innerHTML = '<i class="ri-close-line"></i>';
+            } else {
+                menuBtn.innerHTML = '<i class="ri-menu-line"></i>';
+            }
+        });
+
+        // Modal Functionality
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent bg scatter
+        }
+
+        function closeModal(event, id) {
+            if (event.target === document.getElementById(id)) {
+                closeModalDirect(id);
+            }
+        }
+
+        function closeModalDirect(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Form Submit Simulation
+        function submitPreOrder() {
+            closeModalDirect('preOrderModal');
+            showToast('Deposit received! Welcome to Quantara.');
+        }
+
+        // Toast functionality
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+    </script>
+</body>
+</html>
